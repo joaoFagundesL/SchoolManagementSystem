@@ -6,10 +6,12 @@ import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
@@ -62,6 +64,10 @@ public class Disciplina implements Serializable, Entidade {
 	@OneToMany(mappedBy = "disciplina")
 	private List<Matricula> matriculas;
 	
+	@ManyToMany(mappedBy = "discs")
+	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.MERGE, CascadeType.PERSIST})
+	private List<DiaSemana> dias;
+
 	/* Um professor pode dar varias disciplinas */
 	@ManyToMany(mappedBy = "disciplinas")
 	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.MERGE, CascadeType.PERSIST})
@@ -105,6 +111,13 @@ public class Disciplina implements Serializable, Entidade {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public List<DiaSemana> getDias() {
+		return dias;
+	}
+
+	public void setDias(List<DiaSemana> dias) {
+		this.dias = dias;
 	}
 
 	public Integer getCargaHoraria() {

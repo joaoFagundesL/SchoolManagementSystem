@@ -60,6 +60,7 @@ public class Professor extends Usuario implements Entidade {
 				inverseJoinColumns = @JoinColumn(name = "disciplinaid"))
 	private List<Disciplina> disciplinas;
 	
+	
 	@ManyToOne
 	@JoinColumn(name = "curso_id")
 	private Curso curso;

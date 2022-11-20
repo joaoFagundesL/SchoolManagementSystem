@@ -40,9 +40,6 @@ public class LoginView {
 
 	JFrame frame = new JFrame("Sistema");
 	
-	/**
-	 * @wbp.parser.entryPoint
-	 */
 	public LoginView() {
 		initComponents(frame);
 		frame.setBounds(100, 100, 400, 300);

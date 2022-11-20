@@ -45,6 +45,7 @@ public class AlunoMainView {
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		
 		MatriculaView matriculaView = new MatriculaView(a);
+		GradeView gradeView = new GradeView(a);
 		
 		panelFirst.setLayout(null);
 		panelFirst.setBackground(Color.WHITE);
@@ -62,7 +63,7 @@ public class AlunoMainView {
 		panel.setBackground(Color.RED);
 		tabbedPane.addTab("New tab", null, matriculaView, null);
 		
-		tabbedPane.addTab("New tab", null, null, null);
+		tabbedPane.addTab("New tab", null, gradeView, null);
 		tabbedPane.addTab("New tab", null, null, null);
 		tabbedPane.addTab("New tab", null, null, null);
 		tabbedPane.addTab("New tab", null, null, null);
@@ -96,7 +97,7 @@ public class AlunoMainView {
 		JButton btnGerenciarCurso = new JButton("Grade");
 		btnGerenciarCurso.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tabbedPane.setSelectedIndex(3);
+				tabbedPane.setSelectedIndex(2);
 			}
 		});
 		btnGerenciarCurso.setForeground(Color.WHITE);

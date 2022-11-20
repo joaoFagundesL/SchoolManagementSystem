@@ -13,7 +13,7 @@ public class MatriculaDAO extends GenericoDAO<Matricula> {
 		EntityManager em = getEM();
 		Disciplina disciplina;
 		
-		Query query = em.createNamedQuery("Matricula.consultarDisciplina");
+		Query query = em.createNamedQuery("Disciplina.consultarDisciplina");
 		query.setParameter("id", id);
 		
 		disciplina = (Disciplina) query.getSingleResult();
