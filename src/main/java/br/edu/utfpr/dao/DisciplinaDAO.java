@@ -49,7 +49,6 @@ public class DisciplinaDAO extends GenericoDAO<Disciplina> {
 		query.setParameter("id", id);
 		
 		/* Como um curso tem varias disciplina, vai retornar uma lista */
-		@SuppressWarnings("unchecked")
 		List<Disciplina> d = query.getResultList();
 		
 		return d;

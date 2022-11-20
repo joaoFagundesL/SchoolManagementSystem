@@ -154,14 +154,18 @@ public class DisciplinaView extends JPanel {
 				
 				/* Atualiza todos os campos de acordo com o informado pelo usuario */
 				DisciplinaDAO dao = new DisciplinaDAO();
-				dao.update(d, nome, carga, semestre, md, c);
 				
-				/* JFrame de confirmacao */
-				JFrame frame = new JFrame("Mensagem");
-				JOptionPane.showMessageDialog(frame, "Atualizado com sucesso!");
-				
-				/* Atualiza a JTable */
-				popularTabelaDisciplina();
+				if(comboBox_2.getSelectedItem().equals("Selecione")) {
+					JFrame frame = new JFrame("Erro");
+					JOptionPane.showMessageDialog(frame, "Preencha todos os campos");
+				} else {
+					dao.update(d, nome, carga, semestre, md, c);
+					/* JFrame de confirmacao */
+					JFrame frame = new JFrame("Mensagem");
+					JOptionPane.showMessageDialog(frame, "Atualizado com sucesso!");
+					/* Atualiza a JTable */
+					popularTabelaDisciplina();					
+				}
 			}
 		});
 		
@@ -206,6 +210,7 @@ public class DisciplinaView extends JPanel {
 				String carga = table_1.getValueAt(table_1.getSelectedRow(), 2).toString();
 				String id = table_1.getValueAt(table_1.getSelectedRow(), 3).toString();
 				String nomeCurso = table_1.getValueAt(table_1.getSelectedRow(), 4).toString();
+//				String modelo = table_1.getValueAt(table_1.getSelectedRow(), 5).toString();
 				
 				/* Limpa os fields que tinham anteriormente para atualizar com os novos */
 				limparTela();	
@@ -215,6 +220,7 @@ public class DisciplinaView extends JPanel {
 				cargaField.setText(carga);
 				comboBox.setSelectedItem(Integer.parseInt(id));
 				comboBox_1.setSelectedItem(nomeCurso);
+//				comboBox_2.setSelectedItem(modelo);
 				
 				/* Atualiza a variavel d, pois assim ela sempre vai armazenar o valor da disciplina atual */
 				DisciplinaDAO dao = new DisciplinaDAO();
@@ -339,8 +345,6 @@ public class DisciplinaView extends JPanel {
 		ModeloDisciplinaDAO dao = new ModeloDisciplinaDAO();
 		String nome = (String)comboBox_2.getSelectedItem();
 		List<ModeloDisciplina> md = dao.consultarTodos();
-		
-		
 		
 		for(ModeloDisciplina modelo : md) {
 			if(modelo.getNome().equals(nome)) {

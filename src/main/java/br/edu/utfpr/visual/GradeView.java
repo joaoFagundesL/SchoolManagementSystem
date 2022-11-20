@@ -59,10 +59,11 @@ public class GradeView extends JPanel {
 		
 		List<Matricula> matriculas = alDao.consultarMatricula(al.getId());
 
-		Object[] arr = new Object[5];
 		for (Matricula m : matriculas) {
+			Object[] arr = new Object[5];
 			Disciplina d = mdao.consultarDisciplina(m.getId());
 			List<DiaSemana> dias = d.getDias();
+		
 			
 			for(int i = 0; i < dias.size(); i++) {
 				if(dias.get(i).getNome().equals("Segunda")) {
@@ -81,9 +82,8 @@ public class GradeView extends JPanel {
 					arr[4] = d.getNome();
 				}
 			}
-		}
-		modelo.addRow(arr);
-		
+			modelo.addRow(arr);
+		}		
 	}
 	
 	
