@@ -27,7 +27,9 @@ import br.edu.utfpr.modelo.Semestre;
 import java.awt.Color;
 
 public class ProfessorBuscarAlunoView extends JPanel {
-
+	
+	/* View do professor */
+	
 	private static final long serialVersionUID = 1L;
 	private JTable table;
 	@SuppressWarnings("rawtypes")
