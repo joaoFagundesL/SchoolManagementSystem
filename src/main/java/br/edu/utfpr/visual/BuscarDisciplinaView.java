@@ -52,11 +52,11 @@ public class BuscarDisciplinaView extends JPanel {
 		add(btnNewButton_2);
 
 		JLabel lblNewLabel_1 = new JLabel("Codigo da Disciplina");
-		lblNewLabel_1.setBounds(25, 205, 125, 17);
+		lblNewLabel_1.setBounds(25, 205, 143, 17);
 		add(lblNewLabel_1);
 
 		disciplinaField = new JTextField();
-		disciplinaField.setBounds(167, 203, 114, 21);
+		disciplinaField.setBounds(186, 203, 114, 21);
 		add(disciplinaField);
 		disciplinaField.setColumns(10);
 
@@ -73,10 +73,10 @@ public class BuscarDisciplinaView extends JPanel {
 
 			}
 		});
-		btnMostrarDisciplinas.setBounds(291, 202, 187, 22);
+		btnMostrarDisciplinas.setBounds(312, 202, 240, 22);
 		add(btnMostrarDisciplinas);
 
-		comboBox.setBounds(129, 276, 247, 22);
+		comboBox.setBounds(153, 276, 247, 22);
 		add(comboBox);
 
 		JButton btnFiltrar = new JButton("Filtrar");
@@ -85,7 +85,7 @@ public class BuscarDisciplinaView extends JPanel {
 				mostrarDisciplinaFiltrada();
 			}
 		});
-		btnFiltrar.setBounds(393, 274, 105, 27);
+		btnFiltrar.setBounds(426, 274, 105, 27);
 		add(btnFiltrar);
 
 		JLabel lblFiltrarPorDisciplina = new JLabel("Filtrar por Curso");
@@ -103,7 +103,7 @@ public class BuscarDisciplinaView extends JPanel {
 				mostrarDisciplinaId(Integer.parseInt(disciplinaField.getText()));
 			}
 		});
-		enviarBtn.setBounds(177, 345, 85, 21);
+		enviarBtn.setBounds(177, 345, 85, 27);
 		add(enviarBtn);
 	}
 	
