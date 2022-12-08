@@ -5,16 +5,14 @@ import java.awt.Color;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JTabbedPane;
-import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
-import br.edu.utfpr.modelo.Aluno;
 import br.edu.utfpr.modelo.Professor;
 
 public class ProfessorMainView {
@@ -45,6 +43,7 @@ public class ProfessorMainView {
 	
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		ProfessorBuscarAlunoView buscarAlunoView = new ProfessorBuscarAlunoView(p);
+		ProfessorBuscarDisciplinaView buscarDisciplinaView = new ProfessorBuscarDisciplinaView(p);
 		
 		
 		panelFirst.setLayout(null);
@@ -63,7 +62,7 @@ public class ProfessorMainView {
 		panel.setBackground(Color.RED);
 		tabbedPane.addTab("New tab", null, buscarAlunoView, null);
 		
-		tabbedPane.addTab("New tab", null, null, null);
+		tabbedPane.addTab("New tab", null, buscarDisciplinaView, null);
 		tabbedPane.addTab("New tab", null, null, null);
 		tabbedPane.addTab("New tab", null, null, null);
 		tabbedPane.addTab("New tab", null, null, null);
@@ -79,6 +78,7 @@ public class ProfessorMainView {
 		JButton btnGerenciaAlunos = new JButton("Consultar Disciplinas");
 		btnGerenciaAlunos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				tabbedPane.setSelectedIndex(2);
 			}
 		});
 		btnGerenciaAlunos.setForeground(SystemColor.text);
