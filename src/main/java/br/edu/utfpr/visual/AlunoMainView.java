@@ -46,6 +46,7 @@ public class AlunoMainView {
 		
 		MatriculaView matriculaView = new MatriculaView(a);
 		GradeView gradeView = new GradeView(a);
+		AlunoBuscarDisciplinaView alunoDisciplinaView = new AlunoBuscarDisciplinaView(a);
 		
 		panelFirst.setLayout(null);
 		panelFirst.setBackground(Color.WHITE);
@@ -57,14 +58,14 @@ public class AlunoMainView {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.CYAN);
-		tabbedPane.addTab("New tab", null, panel_1, null);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.RED);
+		tabbedPane.addTab("New tab", null, panel_1, null);
 		tabbedPane.addTab("New tab", null, matriculaView, null);
 		
 		tabbedPane.addTab("New tab", null, gradeView, null);
-		tabbedPane.addTab("New tab", null, null, null);
+		tabbedPane.addTab("New tab", null, alunoDisciplinaView, null);
 		tabbedPane.addTab("New tab", null, null, null);
 		tabbedPane.addTab("New tab", null, null, null);
 		tabbedPane.addTab("New tab", null, null, null);
@@ -77,6 +78,11 @@ public class AlunoMainView {
 		panel_2.setLayout(null);
 		
 		JButton btnGerenciaAlunos = new JButton("Consultar Disciplinas");
+		btnGerenciaAlunos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tabbedPane.setSelectedIndex(3);
+			}
+		});
 		btnGerenciaAlunos.setForeground(SystemColor.text);
 		btnGerenciaAlunos.setBackground(Color.DARK_GRAY);
 		btnGerenciaAlunos.setBounds(23, 70, 171, 27);

@@ -76,8 +76,7 @@ public class MatriculaView extends JPanel {
 					JOptionPane.showMessageDialog(frame, "Disciplina Inválida!");
 				}
 			
-				
-				//matricula.setId(444);
+					
 				matricula.setAtivo("Ativo");
 				matricula.setAluno(al);
 				matricula.setDisciplina(disciplina);
@@ -87,6 +86,9 @@ public class MatriculaView extends JPanel {
 				catch (Exception e1) {e1.printStackTrace();}
 				
 				al.setMatriculas(matriculas);
+				
+				JFrame frame = new JFrame("Mensagem");
+				JOptionPane.showMessageDialog(frame, "Cadastrado com sucesso!");
 			}
 		});
 		btnNewButton_1.setBounds(182, 342, 106, 27);
