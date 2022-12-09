@@ -74,7 +74,10 @@ public class AlunoBuscarDisciplinaView extends JPanel {
 				AlunoDAO aldao = new AlunoDAO();
 				List<Matricula> matriculas = aldao.consultarMatricula(a.getId());
 			
-				System.out.println(matriculas.size());
+				if(matriculas.size() <= 0) {
+					JFrame frame = new JFrame("Erro");
+					JOptionPane.showMessageDialog(frame, "Nenhuma disciplina matriculada!");
+				}
 				
 				mostrarRegistrosDisciplina(matriculas);			
 

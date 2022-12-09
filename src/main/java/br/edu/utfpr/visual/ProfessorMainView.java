@@ -44,6 +44,7 @@ public class ProfessorMainView {
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		ProfessorBuscarAlunoView buscarAlunoView = new ProfessorBuscarAlunoView(p);
 		ProfessorBuscarDisciplinaView buscarDisciplinaView = new ProfessorBuscarDisciplinaView(p);
+		LancarNotasView lancarNotaView = new LancarNotasView(p);
 		
 		
 		panelFirst.setLayout(null);
@@ -63,7 +64,7 @@ public class ProfessorMainView {
 		tabbedPane.addTab("New tab", null, buscarAlunoView, null);
 		
 		tabbedPane.addTab("New tab", null, buscarDisciplinaView, null);
-		tabbedPane.addTab("New tab", null, null, null);
+		tabbedPane.addTab("New tab", null, lancarNotaView, null);
 		tabbedPane.addTab("New tab", null, null, null);
 		tabbedPane.addTab("New tab", null, null, null);
 		tabbedPane.addTab("New tab", null, null, null);
@@ -97,7 +98,7 @@ public class ProfessorMainView {
 		btnGerenciarProfessor.setBounds(23, 109, 183, 27);
 		panel_2.add(btnGerenciarProfessor);
 		
-		JButton btnGerenciarCurso = new JButton("Monitores");
+		JButton btnGerenciarCurso = new JButton("Lançar Notas");
 		btnGerenciarCurso.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tabbedPane.setSelectedIndex(3);

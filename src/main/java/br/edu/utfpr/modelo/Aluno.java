@@ -5,6 +5,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -57,7 +58,7 @@ public class Aluno extends Usuario implements Entidade {
 	
 	/* Um aluno pode ter varias matriculas, mas uma matricula so pode estar vinculada com uma disciplina */
 	@Cascade(org.hibernate.annotations.CascadeType.DELETE)
-	@OneToMany(mappedBy = "aluno")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "aluno")
 	private List<Matricula> matriculas;
 	
 	/* Um aluno só pode estar em um semestre */

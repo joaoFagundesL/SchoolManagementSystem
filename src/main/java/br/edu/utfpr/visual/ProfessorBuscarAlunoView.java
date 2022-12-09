@@ -113,7 +113,11 @@ public class ProfessorBuscarAlunoView extends JPanel {
 			arr[5] = m.getAluno().getSemestre().getId();
 			arr[6] = m.getAluno().getCurso().getNome();
 			arr[7] = m.getDisciplina().getSemestre().getId();
-			arr[8] = m.getAluno().getSenha();
+			
+			if(m.getNotaFinal() != null && m.getNotaFinal() < 6) arr[8] = "Reprovado";
+			else if(m.getNotaFinal() == null) arr[8] = "";
+			else arr[8] = "Aprovado";				
+			
 			modelo.addRow(arr);
 		}
 	}
