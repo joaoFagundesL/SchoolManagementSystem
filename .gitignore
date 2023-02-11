@@ -1,9 +1,0 @@
-.settings/
-.classpath
-.project
-*.xml
-resources/
-resources/*
-target
-*.jar
-*.log
